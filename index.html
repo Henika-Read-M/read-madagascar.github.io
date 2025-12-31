@@ -6,10 +6,10 @@
   <meta name="google-site-verification" content="d7-aYVeVQw5aG-WKhF9Ob3LepMR1gweFadJArP8VHJQ" />
   <title>READ-Madagascar | Rural Empowerment & Development</title>
 
-  <!-- Fonts modernes -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome pour icônes -->
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -17,7 +17,7 @@
     body {font-family: 'Poppins', sans-serif; line-height:1.6; background:#f4f4f4; color:#333;}
     h1,h2,h3 {font-family: 'Roboto', sans-serif;}
     a {text-decoration:none; color:inherit;}
-
+    
     header {background:#1f7a5c; color:white; padding:20px 30px; text-align:center;}
     header h1 {margin-bottom:10px;}
     nav a {margin:0 15px; font-weight:bold; cursor:pointer; color:white;}
@@ -32,13 +32,13 @@
     .btn {background:#1f7a5c; color:white; padding:10px 15px; border-radius:5px; display:inline-block; margin-top:10px; transition:0.3s;}
     .btn:hover {background:#145d44;}
 
-    /* Styles images */
+    /* Image styles */
     .section-img {
       width:100%;
       max-width:1000px;
       margin:20px auto;
       border-radius:10px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.2);
+      box-shadow:0 4px 12px rgba(0,0,0,0.3);
     }
 
     footer {background:#222; color:white; text-align:center; padding:20px; margin-top:20px;}
@@ -61,7 +61,7 @@
   <section id="about" class="active">
     <h2>Qui sommes-nous ?</h2>
     <p>READ-Madagascar est une organisation à but non lucratif œuvrant pour le développement durable des communautés rurales à Madagascar à travers l’agriculture, l’éducation et l’entrepreneuriat.</p>
-    <img src="images/people-farming.jpg" alt="Personnes cultivant le riz" class="section-img">
+    <img src="images/EDGRND1.jpg" alt="Rural activities" class="section-img">
   </section>
 
   <!-- Actions Section -->
@@ -73,8 +73,10 @@
       <li><i class="fas fa-lightbulb"></i> Promotion de l’entrepreneuriat local</li>
       <li><i class="fas fa-book"></i> Éducation et formation</li>
     </ul>
-    <img src="images/farm-maize.jpg" alt="Champ de maïs" class="section-img">
-    <img src="images/farm-cassava.jpg" alt="Champ de manioc" class="section-img">
+    <img src="images/Manioc.webp" alt="Champ de manioc" class="section-img">
+    <img src="images/Riz agricole 1.jpg" alt="Champ de riz 1" class="section-img">
+    <img src="images/Riz agricole 3.jpg" alt="Champ de riz 3" class="section-img">
+    <img src="images/Riz agricole.jpg" alt="Champ de riz" class="section-img">
   </section>
 
   <!-- Governance Section -->
@@ -98,6 +100,7 @@
 </footer>
 
 <script>
+  // Function to show only the clicked section
   function showSection(id) {
     document.querySelectorAll('main section').forEach(sec => {
       sec.classList.remove('active');
