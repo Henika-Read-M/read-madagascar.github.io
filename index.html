@@ -4,131 +4,92 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="d7-aYVeVQw5aG-WKhF9Ob3LepMR1gweFadJArP8VHJQ" />
-  <title>READ-Madagascar | Rural Empowerment and Development</title>
+  <title>READ-Madagascar | Rural Empowerment & Development</title>
+
+  <!-- Fonts modernes -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome pour icônes -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     * {margin:0; padding:0; box-sizing:border-box;}
-    body {font-family: Arial, sans-serif; line-height:1.6; background:#f4f4f4; color:#222;}
+    body {font-family: 'Poppins', sans-serif; line-height:1.6; background:#f4f4f4; color:#333;}
+    h1,h2,h3 {font-family: 'Roboto', sans-serif;}
     a {text-decoration:none; color:inherit;}
 
-    header {
-      position:fixed; top:0; width:100%; background:#1f7a5c; color:white; z-index:1000;
-    }
-    header .container {
-      display:flex; justify-content:space-between; align-items:center; padding:15px 30px;
-    }
+    header {background:#1f7a5c; color:white; padding:20px 30px; text-align:center;}
+    header h1 {margin-bottom:10px;}
     nav a {margin:0 15px; font-weight:bold; cursor:pointer; color:white;}
-    .lang-toggle button {
-      margin-left:10px; padding:5px 10px; border:none; border-radius:3px; cursor:pointer; background:white; color:#1f7a5c;
-    }
 
-    main {margin-top:80px;}
-    section {padding:100px 20px; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; color:white; position:relative;}
-    section h2 {margin-bottom:20px;}
-    section p, section ul {max-width:800px; margin:auto; margin-bottom:15px;}
+    main {margin-top:20px;}
+    section {padding:80px 20px; text-align:center; display:none;}
+    section.active {display:block;}
+    section h2 {margin-bottom:20px; font-size:2.5em; color:#1f7a5c;}
+    section p {max-width:800px; margin:auto; margin-bottom:15px; font-size:1.1em;}
     ul {list-style:none; padding-left:0;}
-    ul li {margin-bottom:10px;}
+    ul li {margin-bottom:10px; font-size:1.1em;}
     .btn {background:#1f7a5c; color:white; padding:10px 15px; border-radius:5px; display:inline-block; margin-top:10px; transition:0.3s;}
     .btn:hover {background:#145d44;}
 
-    /* Couleurs de chaque section */
-    #about {background:url('images/about-bg.jpg') center/cover no-repeat; color:white;}
-    #actions {background:url('images/actions-bg.jpg') center/cover no-repeat; color:white;}
-    #governance {background:url('images/governance-bg.jpg') center/cover no-repeat; color:white;}
-    #contact {background:#1f7a5c;}
-
-    .hidden {display:none;}
-
-    footer {background:#222; color:white; text-align:center; padding:20px;}
-    
-    @media(max-width:768px) {
-      header .container {flex-direction:column; align-items:flex-start;}
-      nav {margin-top:10px;}
+    /* Styles images */
+    .section-img {
+      width:100%;
+      max-width:1000px;
+      margin:20px auto;
+      border-radius:10px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.2);
     }
+
+    footer {background:#222; color:white; text-align:center; padding:20px; margin-top:20px;}
   </style>
 </head>
 <body>
 
 <header>
-  <div class="container">
-    <h1>READ-Madagascar</h1>
-    <nav>
-      <a onclick="showSection('about')"><i class="fas fa-info-circle"></i> About</a>
-      <a onclick="showSection('actions')"><i class="fas fa-seedling"></i> Actions</a>
-      <a onclick="showSection('governance')"><i class="fas fa-users"></i> Governance</a>
-      <a onclick="showSection('contact')"><i class="fas fa-envelope"></i> Contact</a>
-    </nav>
-    <div class="lang-toggle">
-      <button onclick="showFrench()">FR</button>
-      <button onclick="showEnglish()">EN</button>
-    </div>
-  </div>
+  <h1>READ-Madagascar</h1>
+  <nav>
+    <a onclick="showSection('about')"><i class="fas fa-info-circle"></i> About</a>
+    <a onclick="showSection('actions')"><i class="fas fa-seedling"></i> Actions</a>
+    <a onclick="showSection('governance')"><i class="fas fa-users"></i> Governance</a>
+    <a onclick="showSection('contact')"><i class="fas fa-envelope"></i> Contact</a>
+  </nav>
 </header>
 
 <main>
   <!-- About Section -->
-  <section id="about">
-    <div id="fr-about">
-      <h2>Qui sommes-nous ?</h2>
-      <p>READ-Madagascar est une organisation à but non lucratif œuvrant pour le développement durable des communautés rurales à Madagascar à travers l’agriculture, l’éducation, l’entrepreneuriat et l’innovation locale.</p>
-    </div>
-    <div id="en-about" class="hidden">
-      <h2>About us</h2>
-      <p>READ-Madagascar is a non-profit organization working for sustainable development of rural communities in Madagascar through agriculture, education, local entrepreneurship, and innovation.</p>
-    </div>
+  <section id="about" class="active">
+    <h2>Qui sommes-nous ?</h2>
+    <p>READ-Madagascar est une organisation à but non lucratif œuvrant pour le développement durable des communautés rurales à Madagascar à travers l’agriculture, l’éducation et l’entrepreneuriat.</p>
+    <img src="images/people-farming.jpg" alt="Personnes cultivant le riz" class="section-img">
   </section>
 
   <!-- Actions Section -->
   <section id="actions">
-    <div id="fr-actions">
-      <h2>Nos actions</h2>
-      <ul>
-        <li><i class="fas fa-tractor"></i> Développement de l’agriculture durable</li>
-        <li><i class="fas fa-chalkboard-teacher"></i> Renforcement des capacités communautaires</li>
-        <li><i class="fas fa-lightbulb"></i> Promotion de l’entrepreneuriat local</li>
-        <li><i class="fas fa-book"></i> Éducation et formation</li>
-      </ul>
-    </div>
-    <div id="en-actions" class="hidden">
-      <h2>Our Actions</h2>
-      <ul>
-        <li><i class="fas fa-tractor"></i> Sustainable agriculture development</li>
-        <li><i class="fas fa-chalkboard-teacher"></i> Community capacity building</li>
-        <li><i class="fas fa-lightbulb"></i> Promotion of local entrepreneurship</li>
-        <li><i class="fas fa-book"></i> Education and training</li>
-      </ul>
-    </div>
+    <h2>Nos actions</h2>
+    <ul>
+      <li><i class="fas fa-tractor"></i> Développement de l’agriculture durable : riz, maïs, manioc</li>
+      <li><i class="fas fa-chalkboard-teacher"></i> Renforcement des capacités communautaires</li>
+      <li><i class="fas fa-lightbulb"></i> Promotion de l’entrepreneuriat local</li>
+      <li><i class="fas fa-book"></i> Éducation et formation</li>
+    </ul>
+    <img src="images/farm-maize.jpg" alt="Champ de maïs" class="section-img">
+    <img src="images/farm-cassava.jpg" alt="Champ de manioc" class="section-img">
   </section>
 
   <!-- Governance Section -->
   <section id="governance">
-    <div id="fr-governance">
-      <h2>Gouvernance</h2>
-      <p>L’association est dirigée par un Conseil d’Administration composé d’un Président, d’un Coordonnateur Général, d’un Trésorier, d’un Responsable RH et de Conseillers.</p>
-    </div>
-    <div id="en-governance" class="hidden">
-      <h2>Governance</h2>
-      <p>The association is managed by a Board of Directors composed of a President, a General Coordinator, a Treasurer, an HR Manager, and Advisors.</p>
-    </div>
+    <h2>Gouvernance</h2>
+    <p>L’association est dirigée par un Conseil d’Administration comprenant un Président, un Coordonnateur Général, un Trésorier, un Responsable RH et des Conseillers.</p>
+    <img src="images/governance-team.jpg" alt="Équipe du conseil" class="section-img">
   </section>
 
   <!-- Contact Section -->
   <section id="contact">
-    <div id="fr-contact">
-      <h2>Contact</h2>
-      <p>📍 Antananarivo, Madagascar</p>
-      <p>📧 Email provisoire : read.madagascar@gmail.com</p>
-      <a href="mailto:read.madagascar@gmail.com" class="btn">Envoyer un email</a>
-    </div>
-    <div id="en-contact" class="hidden">
-      <h2>Contact</h2>
-      <p>📍 Antananarivo, Madagascar</p>
-      <p>📧 Temporary Email: read.madagascar@gmail.com</p>
-      <a href="mailto:read.madagascar@gmail.com" class="btn">Send Email</a>
-    </div>
+    <h2>Contact</h2>
+    <p>📍 Antananarivo, Madagascar</p>
+    <p>📧 Email provisoire : read.madagascar@gmail.com</p>
+    <a href="mailto:read.madagascar@gmail.com" class="btn">Envoyer un email</a>
   </section>
 </main>
 
@@ -137,19 +98,12 @@
 </footer>
 
 <script>
-  // Langue toggle
-  function showFrench() {
-    document.querySelectorAll('[id^="en"]').forEach(e => e.classList.add('hidden'));
-    document.querySelectorAll('[id^="fr"]').forEach(e => e.classList.remove('hidden'));
-  }
-  function showEnglish() {
-    document.querySelectorAll('[id^="fr"]').forEach(e => e.classList.add('hidden'));
-    document.querySelectorAll('[id^="en"]').forEach(e => e.classList.remove('hidden'));
-  }
-
-  // Navigation smooth scroll
-  function showSection(sectionId) {
-    document.getElementById(sectionId).scrollIntoView({behavior: 'smooth'});
+  function showSection(id) {
+    document.querySelectorAll('main section').forEach(sec => {
+      sec.classList.remove('active');
+    });
+    document.getElementById(id).classList.add('active');
+    window.scrollTo(0,0);
   }
 </script>
 
