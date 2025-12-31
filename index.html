@@ -5,117 +5,139 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>READ-Madagascar | Rural Empowerment and Development</title>
   <style>
-    body {font-family: Arial, sans-serif; margin:0; background:#f9f9f9; color:#222;}
-    header {background:#1f7a5c; color:white; padding:30px; text-align:center;}
-    nav a {margin:0 10px; color:white; text-decoration:none; font-weight:bold;}
-    section {padding:40px; max-width:1000px; margin:auto;}
-    h2 {color:#1f7a5c;}
+    /* Reset & basic styles */
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family: Arial, sans-serif; line-height:1.6; background:#f4f4f4; color:#222;}
+    a {text-decoration:none; color:inherit;}
+    
+    /* Header & navigation */
+    header {position:fixed; top:0; width:100%; background:#1f7a5c; color:white; z-index:1000;}
+    header .container {display:flex; justify-content:space-between; align-items:center; padding:15px 30px;}
+    nav a {margin:0 15px; font-weight:bold; cursor:pointer;}
+    .lang-toggle button {margin-left:10px; padding:5px 10px; border:none; border-radius:3px; cursor:pointer; background:white; color:#1f7a5c;}
+    
+    /* Section styling */
+    section {padding:100px 20px; min-height:100vh;}
+    #about {background:#e0f7f1;}
+    #actions {background:#d0f0f8;}
+    #governance {background:#ffe0b2;}
+    #contact {background:#f8d0d0;}
+    h2 {color:#1f7a5c; margin-bottom:20px;}
+    ul {list-style:none; padding-left:0;}
+    ul li {margin-bottom:10px;}
+    .btn {background:#1f7a5c; color:white; padding:10px 15px; border-radius:5px; display:inline-block; margin-top:10px;}
+    
+    /* Footer */
     footer {background:#222; color:white; text-align:center; padding:20px;}
-    .btn {background:#1f7a5c; color:white; padding:10px 15px; text-decoration:none; border-radius:5px;}
-    .lang-toggle {position:absolute; top:20px; right:20px;}
-    .lang-toggle button {margin-left:10px; padding:5px 10px; border:none; border-radius:3px; cursor:pointer;}
+    
+    /* Smooth scroll & section animation */
+    html {scroll-behavior:smooth;}
     .hidden {display:none;}
+    
+    /* Responsive */
+    @media(max-width:768px) {
+      header .container {flex-direction:column; align-items:flex-start;}
+      nav {margin-top:10px;}
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>READ-Madagascar</h1>
-  <p>Rural Empowerment and Development</p>
-  <nav>
-    <a href="#about">À propos</a>
-    <a href="#actions">Actions</a>
-    <a href="#governance">Gouvernance</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <div class="lang-toggle">
-    <button onclick="showFrench()">FR</button>
-    <button onclick="showEnglish()">EN</button>
+  <div class="container">
+    <h1>READ-Madagascar</h1>
+    <nav>
+      <a onclick="showSection('about')">About</a>
+      <a onclick="showSection('actions')">Actions</a>
+      <a onclick="showSection('governance')">Governance</a>
+      <a onclick="showSection('contact')">Contact</a>
+    </nav>
+    <div class="lang-toggle">
+      <button onclick="showFrench()">FR</button>
+      <button onclick="showEnglish()">EN</button>
+    </div>
   </div>
 </header>
 
-<section id="about">
-  <div id="fr">
-    <h2>Qui sommes-nous ?</h2>
-    <p>READ-Madagascar est une organisation à but non lucratif œuvrant pour le développement durable des communautés rurales à Madagascar à travers l’agriculture, l’éducation, l’entrepreneuriat et l’innovation locale.</p>
-  </div>
-  <div id="en" class="hidden">
-    <h2>About us</h2>
-    <p>READ-Madagascar is a non-profit organization working for sustainable development of rural communities in Madagascar through agriculture, education, local entrepreneurship, and innovation.</p>
-  </div>
-</section>
+<main>
+  <section id="about">
+    <div id="fr-about">
+      <h2>Qui sommes-nous ?</h2>
+      <p>READ-Madagascar est une organisation à but non lucratif œuvrant pour le développement durable des communautés rurales à Madagascar à travers l’agriculture, l’éducation, l’entrepreneuriat et l’innovation locale.</p>
+    </div>
+    <div id="en-about" class="hidden">
+      <h2>About us</h2>
+      <p>READ-Madagascar is a non-profit organization working for sustainable development of rural communities in Madagascar through agriculture, education, local entrepreneurship, and innovation.</p>
+    </div>
+  </section>
 
-<section id="actions">
-  <div id="fr-actions">
-    <h2>Nos actions</h2>
-    <ul>
-      <li>Développement de l’agriculture durable</li>
-      <li>Renforcement des capacités communautaires</li>
-      <li>Promotion de l’entrepreneuriat local</li>
-      <li>Éducation et formation</li>
-    </ul>
-  </div>
-  <div id="en-actions" class="hidden">
-    <h2>Our Actions</h2>
-    <ul>
-      <li>Sustainable agriculture development</li>
-      <li>Community capacity building</li>
-      <li>Promotion of local entrepreneurship</li>
-      <li>Education and training</li>
-    </ul>
-  </div>
-</section>
+  <section id="actions">
+    <div id="fr-actions">
+      <h2>Nos actions</h2>
+      <ul>
+        <li>Développement de l’agriculture durable</li>
+        <li>Renforcement des capacités communautaires</li>
+        <li>Promotion de l’entrepreneuriat local</li>
+        <li>Éducation et formation</li>
+      </ul>
+    </div>
+    <div id="en-actions" class="hidden">
+      <h2>Our Actions</h2>
+      <ul>
+        <li>Sustainable agriculture development</li>
+        <li>Community capacity building</li>
+        <li>Promotion of local entrepreneurship</li>
+        <li>Education and training</li>
+      </ul>
+    </div>
+  </section>
 
-<section id="governance">
-  <div id="fr-governance">
-    <h2>Gouvernance</h2>
-    <p>L’association est dirigée par un Conseil d’Administration composé d’un Président, d’un Coordonnateur Général, d’un Trésorier, d’un Responsable RH et de Conseillers.</p>
-  </div>
-  <div id="en-governance" class="hidden">
-    <h2>Governance</h2>
-    <p>The association is managed by a Board of Directors composed of a President, a General Coordinator, a Treasurer, an HR Manager, and Advisors.</p>
-  </div>
-</section>
+  <section id="governance">
+    <div id="fr-governance">
+      <h2>Gouvernance</h2>
+      <p>L’association est dirigée par un Conseil d’Administration composé d’un Président, d’un Coordonnateur Général, d’un Trésorier, d’un Responsable RH et de Conseillers.</p>
+    </div>
+    <div id="en-governance" class="hidden">
+      <h2>Governance</h2>
+      <p>The association is managed by a Board of Directors composed of a President, a General Coordinator, a Treasurer, an HR Manager, and Advisors.</p>
+    </div>
+  </section>
 
-<section id="contact">
-  <div id="fr-contact">
-    <h2>Contact</h2>
-    <p>📍 Antananarivo, Madagascar</p>
-    <p>📧 Email provisoire : read.madagascar@gmail.com</p>
-  </div>
-  <div id="en-contact" class="hidden">
-    <h2>Contact</h2>
-    <p>📍 Antananarivo, Madagascar</p>
-    <p>📧 Temporary Email: read.madagascar@gmail.com</p>
-  </div>
-</section>
+  <section id="contact">
+    <div id="fr-contact">
+      <h2>Contact</h2>
+      <p>📍 Antananarivo, Madagascar</p>
+      <p>📧 Email provisoire : read.madagascar@gmail.com</p>
+      <a href="mailto:read.madagascar@gmail.com" class="btn">Envoyer un email</a>
+    </div>
+    <div id="en-contact" class="hidden">
+      <h2>Contact</h2>
+      <p>📍 Antananarivo, Madagascar</p>
+      <p>📧 Temporary Email: read.madagascar@gmail.com</p>
+      <a href="mailto:read.madagascar@gmail.com" class="btn">Send Email</a>
+    </div>
+  </section>
+</main>
 
 <footer>
   <p>© 2025 READ-Madagascar – Action • Innovation • Autonomie</p>
 </footer>
 
 <script>
-function showFrench() {
-  document.getElementById('fr').classList.remove('hidden');
-  document.getElementById('en').classList.add('hidden');
-  document.getElementById('fr-actions').classList.remove('hidden');
-  document.getElementById('en-actions').classList.add('hidden');
-  document.getElementById('fr-governance').classList.remove('hidden');
-  document.getElementById('en-governance').classList.add('hidden');
-  document.getElementById('fr-contact').classList.remove('hidden');
-  document.getElementById('en-contact').classList.add('hidden');
-}
+  // Language toggle
+  function showFrench() {
+    document.querySelectorAll('[id^="en"]').forEach(e => e.classList.add('hidden'));
+    document.querySelectorAll('[id^="fr"]').forEach(e => e.classList.remove('hidden'));
+  }
+  function showEnglish() {
+    document.querySelectorAll('[id^="fr"]').forEach(e => e.classList.add('hidden'));
+    document.querySelectorAll('[id^="en"]').forEach(e => e.classList.remove('hidden'));
+  }
 
-function showEnglish() {
-  document.getElementById('fr').classList.add('hidden');
-  document.getElementById('en').classList.remove('hidden');
-  document.getElementById('fr-actions').classList.add('hidden');
-  document.getElementById('en-actions').classList.remove('hidden');
-  document.getElementById('fr-governance').classList.add('hidden');
-  document.getElementById('en-governance').classList.remove('hidden');
-  document.getElementById('fr-contact').classList.add('hidden');
-  document.getElementById('en-contact').classList.remove('hidden');
-}
+  // Navigation smooth section display
+  function showSection(sectionId) {
+    document.getElementById(sectionId).scrollIntoView({behavior: 'smooth'});
+  }
 </script>
 
 </body>
