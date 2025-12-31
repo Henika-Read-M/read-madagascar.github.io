@@ -5,37 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="d7-aYVeVQw5aG-WKhF9Ob3LepMR1gweFadJArP8VHJQ" />
   <title>READ-Madagascar | Rural Empowerment and Development</title>
+
+  <!-- Font Awesome pour icônes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
-    /* Reset & basic styles */
     * {margin:0; padding:0; box-sizing:border-box;}
     body {font-family: Arial, sans-serif; line-height:1.6; background:#f4f4f4; color:#222;}
     a {text-decoration:none; color:inherit;}
-    
-    /* Header & navigation */
-    header {position:fixed; top:0; width:100%; background:#1f7a5c; color:white; z-index:1000;}
-    header .container {display:flex; justify-content:space-between; align-items:center; padding:15px 30px;}
-    nav a {margin:0 15px; font-weight:bold; cursor:pointer;}
-    .lang-toggle button {margin-left:10px; padding:5px 10px; border:none; border-radius:3px; cursor:pointer; background:white; color:#1f7a5c;}
-    
-    /* Section styling */
-    section {padding:100px 20px; min-height:100vh;}
-    #about {background:#e0f7f1;}
-    #actions {background:#d0f0f8;}
-    #governance {background:#ffe0b2;}
-    #contact {background:#f8d0d0;}
-    h2 {color:#1f7a5c; margin-bottom:20px;}
+
+    header {
+      position:fixed; top:0; width:100%; background:#1f7a5c; color:white; z-index:1000;
+    }
+    header .container {
+      display:flex; justify-content:space-between; align-items:center; padding:15px 30px;
+    }
+    nav a {margin:0 15px; font-weight:bold; cursor:pointer; color:white;}
+    .lang-toggle button {
+      margin-left:10px; padding:5px 10px; border:none; border-radius:3px; cursor:pointer; background:white; color:#1f7a5c;
+    }
+
+    main {margin-top:80px;}
+    section {padding:100px 20px; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; color:white; position:relative;}
+    section h2 {margin-bottom:20px;}
+    section p, section ul {max-width:800px; margin:auto; margin-bottom:15px;}
     ul {list-style:none; padding-left:0;}
     ul li {margin-bottom:10px;}
-    .btn {background:#1f7a5c; color:white; padding:10px 15px; border-radius:5px; display:inline-block; margin-top:10px;}
-    
-    /* Footer */
+    .btn {background:#1f7a5c; color:white; padding:10px 15px; border-radius:5px; display:inline-block; margin-top:10px; transition:0.3s;}
+    .btn:hover {background:#145d44;}
+
+    /* Couleurs de chaque section */
+    #about {background:url('images/about-bg.jpg') center/cover no-repeat; color:white;}
+    #actions {background:url('images/actions-bg.jpg') center/cover no-repeat; color:white;}
+    #governance {background:url('images/governance-bg.jpg') center/cover no-repeat; color:white;}
+    #contact {background:#1f7a5c;}
+
+    .hidden {display:none;}
+
     footer {background:#222; color:white; text-align:center; padding:20px;}
     
-    /* Smooth scroll & section animation */
-    html {scroll-behavior:smooth;}
-    .hidden {display:none;}
-    
-    /* Responsive */
     @media(max-width:768px) {
       header .container {flex-direction:column; align-items:flex-start;}
       nav {margin-top:10px;}
@@ -48,10 +56,10 @@
   <div class="container">
     <h1>READ-Madagascar</h1>
     <nav>
-      <a onclick="showSection('about')">About</a>
-      <a onclick="showSection('actions')">Actions</a>
-      <a onclick="showSection('governance')">Governance</a>
-      <a onclick="showSection('contact')">Contact</a>
+      <a onclick="showSection('about')"><i class="fas fa-info-circle"></i> About</a>
+      <a onclick="showSection('actions')"><i class="fas fa-seedling"></i> Actions</a>
+      <a onclick="showSection('governance')"><i class="fas fa-users"></i> Governance</a>
+      <a onclick="showSection('contact')"><i class="fas fa-envelope"></i> Contact</a>
     </nav>
     <div class="lang-toggle">
       <button onclick="showFrench()">FR</button>
@@ -61,6 +69,7 @@
 </header>
 
 <main>
+  <!-- About Section -->
   <section id="about">
     <div id="fr-about">
       <h2>Qui sommes-nous ?</h2>
@@ -72,27 +81,29 @@
     </div>
   </section>
 
+  <!-- Actions Section -->
   <section id="actions">
     <div id="fr-actions">
       <h2>Nos actions</h2>
       <ul>
-        <li>Développement de l’agriculture durable</li>
-        <li>Renforcement des capacités communautaires</li>
-        <li>Promotion de l’entrepreneuriat local</li>
-        <li>Éducation et formation</li>
+        <li><i class="fas fa-tractor"></i> Développement de l’agriculture durable</li>
+        <li><i class="fas fa-chalkboard-teacher"></i> Renforcement des capacités communautaires</li>
+        <li><i class="fas fa-lightbulb"></i> Promotion de l’entrepreneuriat local</li>
+        <li><i class="fas fa-book"></i> Éducation et formation</li>
       </ul>
     </div>
     <div id="en-actions" class="hidden">
       <h2>Our Actions</h2>
       <ul>
-        <li>Sustainable agriculture development</li>
-        <li>Community capacity building</li>
-        <li>Promotion of local entrepreneurship</li>
-        <li>Education and training</li>
+        <li><i class="fas fa-tractor"></i> Sustainable agriculture development</li>
+        <li><i class="fas fa-chalkboard-teacher"></i> Community capacity building</li>
+        <li><i class="fas fa-lightbulb"></i> Promotion of local entrepreneurship</li>
+        <li><i class="fas fa-book"></i> Education and training</li>
       </ul>
     </div>
   </section>
 
+  <!-- Governance Section -->
   <section id="governance">
     <div id="fr-governance">
       <h2>Gouvernance</h2>
@@ -104,6 +115,7 @@
     </div>
   </section>
 
+  <!-- Contact Section -->
   <section id="contact">
     <div id="fr-contact">
       <h2>Contact</h2>
@@ -125,7 +137,7 @@
 </footer>
 
 <script>
-  // Language toggle
+  // Langue toggle
   function showFrench() {
     document.querySelectorAll('[id^="en"]').forEach(e => e.classList.add('hidden'));
     document.querySelectorAll('[id^="fr"]').forEach(e => e.classList.remove('hidden'));
@@ -135,7 +147,7 @@
     document.querySelectorAll('[id^="en"]').forEach(e => e.classList.remove('hidden'));
   }
 
-  // Navigation smooth section display
+  // Navigation smooth scroll
   function showSection(sectionId) {
     document.getElementById(sectionId).scrollIntoView({behavior: 'smooth'});
   }
